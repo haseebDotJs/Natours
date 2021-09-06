@@ -1,0 +1,156 @@
+.header {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url(../../img//hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.logo {
+    /* controlling each property either width or height, automatically sets other property accordingly */
+    height: 3.5rem;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    /* it fixes little shakeness in child elements while animation */
+    backface-visibility: hidden;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    font-weight: 400;
+    /* animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; */
+    /* shorthand */
+    animation: moveInLeft 1s ease-out;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+}
+
+
+/* animation property on ly works properly on display: block elements */
+
+@keyframes moveInLeft {
+    0% {
+        transform: translateX(-10rem);
+        opacity: 0;
+    }
+    80% {
+        transform: translateX(1rem);
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        transform: translateX(10rem);
+        opacity: 0;
+    }
+    80% {
+        transform: translateX(-1rem);
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+.btn:link,
+.btn:visited {
+    padding: 1.5rem 4rem;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    display: inline-block;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+}
+
+.btn:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0px .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn:hover::after {
+    opacity: 0;
+    transform: scaleX(1.4) scaleY(1.6);
+}
+
+.btn-white {
+    background-color: white;
+}
+
+.btn-white::after {
+    background-color: white;
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .5s;
+    /* animation fill mode applies the initial 0% animation styling at the start of animation, so even on .5s delay the main button will not be revealed before the n */
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
