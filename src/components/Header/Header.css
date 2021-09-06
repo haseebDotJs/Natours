@@ -11,18 +11,18 @@
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     /* controlling each property either width or height, automatically sets other property accordingly */
     height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -38,7 +38,7 @@
     backface-visibility: hidden;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     letter-spacing: 3.5rem;
@@ -50,7 +50,7 @@
     animation: moveInLeft 1s ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     letter-spacing: 1.75rem;
@@ -127,15 +127,15 @@
     transform: scaleX(1.4) scaleY(1.6);
 }
 
-.btn-white {
+.btn--white {
     background-color: white;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: white;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBottom .5s ease-out .5s;
     /* animation fill mode applies the initial 0% animation styling at the start of animation, so even on .5s delay the main button will not be revealed before the n */
     animation-fill-mode: backwards;
